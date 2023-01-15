@@ -11,7 +11,11 @@ import javax.swing.*;
 import java.lang.Math;
 
 public class Calculator {
+<<<<<<< HEAD
 sdfdsdfs
+=======
+asd
+>>>>>>> develop
     private static final int WINDOW_WIDTH = 410;
     private static final int WINDOW_HEIGHT = 600;
     private static final int BUTTON_WIDTH = 80;
@@ -71,6 +75,8 @@ sdfdsdfs
         window = new JFrame("Calculator");
         window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         window.setLocationRelativeTo(null); // Move window to center
+
+        comboCalcType = initCombo(new String[]{"Standard", "Scientific"}, 20, 30, "Calculator type", calcTypeSwitchEventConsumer);
 
         int[] x = {MARGIN_X, MARGIN_X + 90, 200, 290, 380};
         int[] y = {MARGIN_Y, MARGIN_Y + 100, MARGIN_Y + 180, MARGIN_Y + 260, MARGIN_Y + 340, MARGIN_Y + 420};
@@ -474,6 +480,26 @@ sdfdsdfs
     private void repaintFont() {
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
     }
+
+        private Consumer<ItemEvent> calcTypeSwitchEventConsumer = event -> {
+        if (event.getStateChange() != ItemEvent.SELECTED) return;
+
+        String selectedItem = (String) event.getItem();
+        switch (selectedItem) {
+            case "Standard":
+                window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+                btnRoot.setVisible(false);
+                btnPower.setVisible(false);
+                btnLog.setVisible(false);
+                break;
+            case "Scientific":
+                window.setSize(WINDOW_WIDTH + 80, WINDOW_HEIGHT);
+                btnRoot.setVisible(true);
+                btnPower.setVisible(true);
+                btnLog.setVisible(true);
+                break;
+        }
+    };
 
     public static void main(String[] args) {
         new Calculator();
