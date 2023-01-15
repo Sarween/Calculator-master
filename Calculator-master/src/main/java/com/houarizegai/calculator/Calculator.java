@@ -11,11 +11,15 @@ import javax.swing.*;
 import java.lang.Math;
 
 public class Calculator {
+<<<<<<< .merge_file_8e0KiN
 <<<<<<< HEAD
 sdfdsdfs
 =======
 asd
 >>>>>>> develop
+=======
+Hi we are testing
+>>>>>>> .merge_file_vd9eYi
     private static final int WINDOW_WIDTH = 410;
     private static final int WINDOW_HEIGHT = 600;
     private static final int BUTTON_WIDTH = 80;
